@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-cream: #f5f3ee;
+  --color-forest: #1a3c2a;
+  --color-leaf: #4a7c59;
+  --color-moss: #2d5a3d;
+  --color-stone: #e8e5df;
+  --font-sans: var(--font-sora);
+  --font-serif: var(--font-source-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+  }
+  25% {
+    border-radius: 50% 50% 40% 60% / 50% 60% 40% 50%;
+  }
+  50% {
+    border-radius: 60% 40% 50% 50% / 40% 50% 60% 50%;
+  }
+  75% {
+    border-radius: 40% 60% 50% 50% / 60% 50% 40% 50%;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes image-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.animate-blob {
+  animation: blob 12s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.8s ease-out both;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-image-reveal {
+  animation: image-reveal 1.2s ease-out both;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+.bg-pattern-dots {
+  background-image: radial-gradient(rgba(74, 124, 89, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-pattern-rings {
+  background-image: radial-gradient(rgba(74, 124, 89, 0.06) 1.5px, transparent 1.5px);
+  background-size: 48px 48px;
+}
+
+.bg-pattern-lines {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 12px,
+    rgba(74, 124, 89, 0.04) 12px,
+    rgba(74, 124, 89, 0.04) 13px
+  );
+  background-size: 18px 18px;
+}
