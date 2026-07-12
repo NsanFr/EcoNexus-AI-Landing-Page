@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EcoNexus AI — Landing Page
 
-## Getting Started
+Landing page untuk **EcoNexus AI**, platform SaaS Climate Intelligence yang
+dirancang untuk mitigasi bencana hidrometeorologi dan pembiayaan hijau berbasis
+syariah di Indonesia.
 
-First, run the development server:
+Dibangun dengan Next.js + TypeScript + Tailwind CSS v4.
+
+## Tech Stack
+
+| Bagian | Teknologi |
+|--------|-----------|
+| Framework | Next.js 16 |
+| Bahasa | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Font | Sora (heading), Source Serif 4 (body) |
+| Animasi | CSS keyframes + IntersectionObserver |
+| Build | Webpack |
+
+## Struktur Halaman
+
+Landing page terdiri dari 8 section:
+
+1. **Navbar** — Fixed navigation dengan mobile hamburger menu
+2. **Hero** — Headline + forest image + morphing blob background
+3. **Tentang** — Deskripsi platform + kemampuan inti + diagram alur data
+4. **Fitur** — 9 modular feature cards dengan SVG icons handmade
+5. **Cara Kerja** — 4 step alur data pipeline
+6. **Dampak** — 3 segmen target pengguna (Pemerintah, Korporasi, Masyarakat)
+7. **Teknologi** — 5 pilar teknologi (AI, Big Data, IoT, Blockchain, Cloud)
+8. **CTA** — Email waitlist form + sosial media
+
+## Cara Menjalankan
 
 ```bash
+# Install dependencies
+npm install
+
+# Development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka `http://localhost:3000` di browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> **Catatan:** Di Windows x64, perlu `--webpack` flag karena Turbopack belum
+> support platform ini. Udah diatur otomatis di `package.json`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Struktur Project
 
-## Learn More
+```
+src/
+├── app/
+│   ├── globals.css      # Tailwind theme + custom animations + patterns
+│   ├── layout.tsx       # Root layout with fonts & metadata
+│   └── page.tsx         # Halaman utama (gabungan semua section)
+├── components/
+│   ├── navbar.tsx       # Navigation bar (sticky, scroll-aware, mobile menu)
+│   ├── hero.tsx         # Hero section (forest image, blob animation)
+│   ├── about.tsx        # About + kemampuan inti + diagram alur data
+│   ├── features.tsx     # 9 feature cards dengan SVG icons
+│   ├── how-it-works.tsx # 4 step boxes
+│   ├── target-audience.tsx # 3 segmen pengguna
+│   ├── tech-stack.tsx   # 5 pilar teknologi
+│   ├── cta.tsx          # Waitlist form + sosial media
+│   ├── animated-section.tsx # Scroll-triggered fade-in wrapper
+│   └── footer.tsx       # Footer
+└── hooks/
+    └── use-in-view.ts   # IntersectionObserver hook
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Desain
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Warna
+| Nama | Warna | Penggunaan |
+|------|-------|------------|
+| cream | `#f5f3ee` | Background utama |
+| forest | `#1a3c2a` | Teks utama, tombol solid |
+| leaf | `#4a7c59` | Aksen, ikon, highlight |
+| moss | `#2d5a3d` | Hover state tombol |
+| stone | `#e8e5df` | Border |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Font
+- **Sora** — headings (sans-serif, geometric)
+- **Source Serif 4** — body text (serif, readability)
 
-## Deploy on Vercel
+Hindari font AI-slop kayak Inter atau Poppins.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Animasi
+- Scroll-triggered fade-up tiap section (IntersectionObserver)
+- Morphing blob di background hero
+- Image reveal (clip-path) di hero
+- Floating badge
+- Stagger animation di feature cards
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Background Patterns
+- Dots, rings, dan diagonal lines — sangat tipis (opacity 4-8%)
+- Biar halaman tidak kosong tanpa ganggu readability
+
+## Deployment
+
+### GitHub Pages
+```bash
+npm run build
+```
+
+Hasil build ada di folder `out/`. Tinggal arahkan GitHub Pages ke folder
+`/root` atau `/docs` tergantung konfigurasi.
+
+### Vercel / Netlify / Cloudflare Pages
+Tinggal hubungkan repo GitHub, build command `npm run build`, output folder
+`out/`. Jangan lupa set `next build --webpack` di build settings.
