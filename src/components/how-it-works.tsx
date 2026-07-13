@@ -37,7 +37,7 @@ function Step({
   return (
     <div
       ref={ref}
-      className="border border-stone/50 rounded-md p-5 sm:p-6 bg-white relative shadow-sm"
+      className="border border-border/50 rounded-md p-5 sm:p-6 bg-card relative shadow-sm"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(24px)",
@@ -52,10 +52,10 @@ function Step({
         <div className="w-8 h-8 rounded-md bg-leaf/10 text-leaf flex items-center justify-center text-xs font-bold font-sans mb-3">
           {step.number}
         </div>
-        <h3 className="font-sans text-sm sm:text-base font-semibold text-forest mb-1.5 sm:mb-2">
+        <h3 className="font-sans text-sm sm:text-base font-semibold text-text mb-1.5 sm:mb-2">
           {step.title}
         </h3>
-        <p className="text-xs sm:text-sm text-forest/70 leading-relaxed">
+        <p className="text-xs sm:text-sm text-text/70 leading-relaxed">
           {step.desc}
         </p>
       </div>
@@ -67,8 +67,8 @@ export default function HowItWorks() {
   const { ref: headingRef, inView: headingInView } = useInView();
 
   return (
-    <section id="cara-kerja" className="px-6 py-20 sm:py-24 md:py-32 bg-pattern-dots scroll-mt-20">
-      <div className="mx-auto max-w-5xl">
+    <section id="cara-kerja" className="px-6 py-20 sm:py-24 md:py-32 bg-surface bg-pattern-dots scroll-mt-20">
+      <div className="mx-auto max-w-6xl">
         <div
           ref={headingRef}
           className="max-w-2xl mb-12 sm:mb-16"
@@ -81,7 +81,7 @@ export default function HowItWorks() {
           <p className="text-leaf font-sans text-xs sm:text-sm font-medium tracking-widest uppercase mb-3 sm:mb-4">
             Cara Kerja
           </p>
-          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-semibold text-forest">
+          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-semibold text-text">
             Dari Data Satelit ke Aksi Nyata
           </h2>
         </div>

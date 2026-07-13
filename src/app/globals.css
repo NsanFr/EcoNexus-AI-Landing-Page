@@ -1,17 +1,55 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-cream: #f5f3ee;
-  --color-forest: #1a3c2a;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-surface: #f5f3ee;
+  --color-card: #ffffff;
+  --color-text: #1a3c2a;
   --color-leaf: #4a7c59;
   --color-moss: #2d5a3d;
+  --color-border: #e8e5df;
+  --color-forest: #1a3c2a;
+  --color-cream: #f5f3ee;
   --color-stone: #e8e5df;
+  --container-6xl: 1400px;
   --font-sans: var(--font-sora);
   --font-serif: var(--font-source-serif);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@layer base {
+  *, *::before, *::after {
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+  }
+}
+
+.dark {
+  --color-surface: #0f1f16;
+  --color-card: #1a2e24;
+  --color-text: #f0ece4;
+  --color-leaf: #6bae7a;
+  --color-moss: #4a8c5e;
+  --color-border: #2a3f32;
+  --color-forest: #f0ece4;
+  --color-cream: #0f1f16;
+  --color-stone: #2a3f32;
+  --color-stone\/50: rgba(42, 63, 50, 0.5);
+}
+
+.dark .bg-gradient-to-t {
+  --tw-gradient-to: #0f1f16;
 }
 
 @keyframes blob {
@@ -30,48 +68,6 @@ html {
   }
 }
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 @keyframes float {
   0%,
   100% {
@@ -82,57 +78,12 @@ html {
   }
 }
 
-@keyframes image-reveal {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
 .animate-blob {
   animation: blob 12s ease-in-out infinite;
 }
 
-.animate-fade-up {
-  animation: fade-up 0.8s ease-out both;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out both;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out both;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.8s ease-out both;
-}
-
 .animate-float {
   animation: float 6s ease-in-out infinite;
-}
-
-.animate-image-reveal {
-  animation: image-reveal 1.2s ease-out both;
-}
-
-.animation-delay-200 {
-  animation-delay: 200ms;
-}
-
-.animation-delay-400 {
-  animation-delay: 400ms;
-}
-
-.animation-delay-600 {
-  animation-delay: 600ms;
-}
-
-.animation-delay-800 {
-  animation-delay: 800ms;
 }
 
 .bg-pattern-dots {
@@ -154,4 +105,22 @@ html {
     rgba(74, 124, 89, 0.04) 13px
   );
   background-size: 18px 18px;
+}
+
+.dark .bg-pattern-dots {
+  background-image: radial-gradient(rgba(107, 174, 122, 0.06) 1px, transparent 1px);
+}
+
+.dark .bg-pattern-rings {
+  background-image: radial-gradient(rgba(107, 174, 122, 0.04) 1.5px, transparent 1.5px);
+}
+
+.dark .bg-pattern-lines {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 12px,
+    rgba(107, 174, 122, 0.03) 12px,
+    rgba(107, 174, 122, 0.03) 13px
+  );
 }

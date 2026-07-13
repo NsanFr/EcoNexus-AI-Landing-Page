@@ -51,11 +51,11 @@ export default function Cta() {
   return (
     <section
       id="kontak"
-      className="px-6 py-20 sm:py-24 md:py-32 bg-forest scroll-mt-20"
+      className="px-6 py-20 sm:py-24 md:py-32 bg-[#1a3c2a] dark:bg-[#0f1f16] scroll-mt-20"
     >
       <div
         ref={ref}
-        className="mx-auto max-w-5xl flex flex-col md:flex-row gap-10 md:gap-16"
+        className="mx-auto max-w-6xl flex flex-col md:flex-row gap-10 md:gap-16"
         style={{
           opacity: inView ? 1 : 0,
           transform: inView ? "translateY(0)" : "translateY(20px)",
@@ -63,10 +63,10 @@ export default function Cta() {
         }}
       >
         <div className="max-w-lg">
-          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-semibold text-cream mb-3">
+          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-semibold text-[#f5f3ee] mb-3">
             Dapatkan Akses Awal
           </h2>
-          <p className="text-sm sm:text-base text-cream/70 leading-relaxed mb-8">
+          <p className="text-sm sm:text-base text-[#f5f3ee]/70 leading-relaxed mb-8">
             EcoNexus AI sedang dalam tahap pengembangan. Daftar sekarang untuk
             mendapatkan akses awal dan informasi terbaru.
           </p>
@@ -78,12 +78,12 @@ export default function Cta() {
             <input
               type="email"
               placeholder="Masukkan email kamu"
-              className="flex-1 rounded-md bg-cream/10 border border-cream/20 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-cream placeholder:text-cream/40 focus:outline-none focus:border-cream/50 transition-colors"
+              className="flex-1 rounded-md bg-[#f5f3ee]/10 border border-[#f5f3ee]/20 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-[#f5f3ee] placeholder:text-[#f5f3ee]/40 focus:outline-none focus:border-[#f5f3ee]/50 transition-colors"
               required
             />
             <button
               type="submit"
-              className="rounded-md bg-cream px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm text-forest font-sans font-medium hover:bg-cream/90 transition-all hover:-translate-y-0.5 active:translate-y-0"
+              className="rounded-md bg-[#f5f3ee] px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm text-[#1a3c2a] dark:text-[#0f1f16] font-sans font-medium hover:bg-[#f5f3ee]/90 transition-all hover:-translate-y-0.5 active:translate-y-0"
             >
               Daftar
             </button>
@@ -91,7 +91,7 @@ export default function Cta() {
         </div>
 
         <div>
-          <h3 className="font-sans text-base sm:text-lg font-semibold text-cream mb-5">
+          <h3 className="font-sans text-base sm:text-lg font-semibold text-[#f5f3ee] mb-5">
             Ikuti Kami
           </h3>
           <div className="flex flex-col gap-4">
@@ -99,7 +99,7 @@ export default function Cta() {
               <a
                 key={s.name}
                 href={s.href}
-                className="inline-flex items-center gap-3 text-cream/60 hover:text-cream transition-colors text-sm"
+                className="inline-flex items-center gap-3 text-[#f5f3ee]/60 hover:text-[#f5f3ee] transition-colors text-sm"
               >
                 {s.icon}
                 {s.name}

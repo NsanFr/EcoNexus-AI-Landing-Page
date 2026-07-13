@@ -116,7 +116,7 @@ function FeatureCard({
   return (
     <div
       ref={ref}
-      className="border border-stone/50 rounded-md p-5 hover:border-leaf/30 hover:bg-cream transition-all shadow-sm"
+      className="border border-border/50 rounded-md p-5 hover:border-leaf/30 hover:bg-leaf/5 transition-all shadow-sm bg-card"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(20px)",
@@ -127,10 +127,10 @@ function FeatureCard({
       <div className="w-9 h-9 rounded-md bg-leaf/10 text-leaf flex items-center justify-center mb-3">
         {feature.icon}
       </div>
-      <h3 className="font-sans text-sm sm:text-base font-semibold text-forest mb-1.5 sm:mb-2">
+      <h3 className="font-sans text-sm sm:text-base font-semibold text-text mb-1.5 sm:mb-2">
         {feature.title}
       </h3>
-      <p className="text-xs sm:text-sm text-forest/70 leading-relaxed">
+      <p className="text-xs sm:text-sm text-text/70 leading-relaxed">
         {feature.desc}
       </p>
     </div>
@@ -141,8 +141,8 @@ export default function Features() {
   const { ref: headingRef, inView: headingInView } = useInView();
 
   return (
-    <section id="fitur" className="px-6 py-20 sm:py-24 md:py-32 bg-white bg-pattern-rings scroll-mt-20">
-      <div className="mx-auto max-w-5xl">
+    <section id="fitur" className="px-6 py-20 sm:py-24 md:py-32 bg-card bg-pattern-rings scroll-mt-20">
+      <div className="mx-auto max-w-6xl">
         <div
           ref={headingRef}
           className="max-w-2xl mb-12 sm:mb-16"
@@ -155,7 +155,7 @@ export default function Features() {
           <p className="text-leaf font-sans text-xs sm:text-sm font-medium tracking-widest uppercase mb-3 sm:mb-4">
             Fitur Modular
           </p>
-          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-semibold text-forest">
+          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-semibold text-text">
             Sembilan Modul,{" "}
             <span className="italic font-serif font-normal">Satu Ekosistem</span>
           </h2>

@@ -73,7 +73,7 @@ function TechItem({
   return (
     <div
       ref={ref}
-      className="border border-stone/50 rounded-md p-4 sm:p-5 bg-white text-center shadow-sm"
+      className="border border-border/50 rounded-md p-4 sm:p-5 bg-card text-center shadow-sm"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(16px)",
@@ -84,10 +84,10 @@ function TechItem({
       <div className="w-10 h-10 rounded-md bg-leaf/10 text-leaf flex items-center justify-center mx-auto mb-3">
         {tech.icon}
       </div>
-      <h3 className="font-sans text-xs sm:text-sm font-semibold text-forest mb-1.5 sm:mb-2">
+      <h3 className="font-sans text-xs sm:text-sm font-semibold text-text mb-1.5 sm:mb-2">
         {tech.name}
       </h3>
-      <p className="text-[10px] sm:text-xs text-forest/60 leading-relaxed">
+      <p className="text-[10px] sm:text-xs text-text/60 leading-relaxed">
         {tech.desc}
       </p>
     </div>
@@ -98,8 +98,8 @@ export default function TechStack() {
   const { ref: headingRef, inView: headingInView } = useInView();
 
   return (
-    <section className="px-6 py-20 sm:py-24 md:py-32 bg-pattern-lines">
-      <div className="mx-auto max-w-5xl">
+    <section className="px-6 py-20 sm:py-24 md:py-32 bg-surface bg-pattern-lines">
+      <div className="mx-auto max-w-6xl">
         <div
           ref={headingRef}
           className="max-w-2xl mb-12 sm:mb-16"
@@ -112,7 +112,7 @@ export default function TechStack() {
           <p className="text-leaf font-sans text-xs sm:text-sm font-medium tracking-widest uppercase mb-3 sm:mb-4">
             Teknologi
           </p>
-          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-semibold text-forest">
+          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-semibold text-text">
             Lima Pilar Teknologi
           </h2>
         </div>
